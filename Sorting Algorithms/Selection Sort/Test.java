@@ -3,7 +3,12 @@ import java.util.Random;
 public class Test {
     public static void main(String[] args) {
         SelectionSort selectionSort = new SelectionSort();
-        selectionSort.sort(generateArray(10));
+        // 1st input
+        selectionSort.sort(generateArray(100));
+        // 2nd input
+        selectionSort.sort(generateArray(10000));
+        // 3rd input
+        selectionSort.sort(generateArray(1000000));
     }
 
     public static int[] generateArray(int size){
@@ -11,11 +16,6 @@ public class Test {
         for(int i=0; i<size; i++){
             arr[i] = (int)(Math.random()* 101);
         }
-        System.out.println("\nGenerated Array is ->");
-        for(Integer j : arr){
-            System.out.print(j+" ");
-        }
-        System.out.println();
         return arr;
     }
 }

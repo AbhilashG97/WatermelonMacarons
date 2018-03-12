@@ -1,14 +1,15 @@
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 public class CountingSort {
 
     public int[] sort(int[] arr, int range){
-
+        final long start = System.nanoTime();
         int output[] = new int[arr.length];
         int count[] = new int[range];
 
         Arrays.fill(count, 0);
-
+        
         for(int i=0; i<arr.length; ++i){
             ++count[arr[i]];
         }
@@ -22,12 +23,17 @@ public class CountingSort {
             --count[arr[i]];
         }
 
+        final long end = System.nanoTime();
+        System.out.println("Running time is -> "+TimeUnit.MILLISECONDS.toSeconds(end-start)+" seconds");
+
+        return output;
+    }
+
+    public void displayArray(int array[]){
         System.out.println("\nSorted array is ->");
-        for(Integer k : output){
+        for(Integer k : array){
             System.out.print(k+" ");
         }
-
         System.out.println();
-        return output;
     }
 }

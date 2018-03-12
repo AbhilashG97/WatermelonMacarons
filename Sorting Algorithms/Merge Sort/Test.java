@@ -1,23 +1,24 @@
 import java.util.concurrent.TimeUnit;
 
-class Test {
+public class Test {
     public static void main(String[] args) {
-        QuickSort quickSort = new QuickSort();
+        MergeSort mergeSort = new MergeSort();
         long start = 0, end = 0;
-        // Input 1 
+        
+        // Input 1
         start = System.nanoTime();
-        quickSort.sort(generateArray(100), 0, 99);
-        end = System.nanoTime(); 
+        mergeSort.sort(generateArray(100), 0, 99);
+        end = System.nanoTime();
         System.out.println("Running time is -> "+TimeUnit.MILLISECONDS.toSeconds(end-start)+" seconds");
         // Input 2
         start = System.nanoTime();
-        quickSort.sort(generateArray(10000), 0, 9999);
-        end = System.nanoTime(); 
+        mergeSort.sort(generateArray(10000), 0, 9999);
+        end = System.nanoTime();
         System.out.println("Running time is -> "+TimeUnit.MILLISECONDS.toSeconds(end-start)+" seconds");
-        // Input 3
+        // Inpupt 3
         start = System.nanoTime();
-        quickSort.sort(generateArray(1000000), 0, 999999);
-        end = System.nanoTime(); 
+        mergeSort.sort(generateArray(1000000), 0, 999999);
+        end = System.nanoTime();
         System.out.println("Running time is -> "+TimeUnit.MILLISECONDS.toSeconds(end-start)+" seconds");
     }
 
@@ -28,5 +29,4 @@ class Test {
         }
         return array;
     }
-
 }
